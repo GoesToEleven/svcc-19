@@ -1,1 +1,35 @@
 WELCOME
+
+https://github.com/GoesToEleven/svcc-19
+
+Bill Kennedy
+https://www.ardanlabs.com/blog/
+GREAT BLOG
+
+https://twitter.com/joncalhoun?lang=en
+https://gophercises.com/
+
+https://www.udemy.com/user/toddmcleod/
+https://greatercommons.com/
+
+https://changelog.com/gotime
+
+https://golang.org/
+golang spec
+effective golang
+
+great for questions
+and connecting with other gophers
+https://forum.golangbridge.org/
+
+https://godoc.org/
+standar library & third packages
+
+vs code
+jetbrains goland
+
+
+
+
+
+
