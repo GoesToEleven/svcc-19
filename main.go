@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/GoesToEleven/svcc-19/mymath"
+	"net/http"
 )
 
 func main() {
-	fmt.Println("welcome to main")
-	z := mymath.Foo(4, 6)
-	fmt.Println(z)
+	http.HandleFunc("/", foo)
+	http.ListenAndServe(":3000", nil)
+}
+func foo(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "here's the ip %s", r.RemoteAddr)
 }
