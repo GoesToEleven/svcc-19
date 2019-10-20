@@ -5,9 +5,17 @@ import (
 	"net/http"
 )
 
+type hotdog int
+
+func (hd hotdog) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "here is my response from a value of type hotdog")
+}
+
 func main() {
+	var x hotdog
 	http.HandleFunc("/", foo)
 	http.HandleFunc("/about", about)
+	http.Handle("/ballgame", x)
 	http.ListenAndServe(":8080", nil)
 }
 
