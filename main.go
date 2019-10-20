@@ -1,14 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
-	x := 42
-	foo(&x)
-	fmt.Println("back in main", x)
+	http.HandleFunc("/", foo)
+	http.HandleFunc("/about", about)
+	http.ListenAndServe(":8080", nil)
 }
 
-func foo(n *int) {
-	*n = 43
-	fmt.Println("inside foo", n)
+// interface in go says,
+// "Hey baby, if you've got these methods, then you're my type."
+
+func foo(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "hello world")
+}
+
+func about(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "we are at about")
 }
